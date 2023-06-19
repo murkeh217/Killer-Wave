@@ -2,11 +2,47 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    static GameManager instance;
+    public static GameManager Instance
+    {
+        get { return instance; }
+    }
+
+    public static int currentScene = 0;
+    public static int gameLevelScene = 3;
+    
+    bool died = false;
+    public bool Died
+    {
+        get { return died; }
+        set { died = value; }
+    }
+
+    void Awake()
+    {
+        CheckGameManagerIsInTheScene();
+        
+        currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        LightAndCameraSetup(currentScene);
+    }
+
+    void CheckGameManagerIsInTheScene()
+    {
+         if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-      CameraSetup();
-      LightSetup();  
+      
     }
 
     // Update is called once per frame
@@ -34,4 +70,20 @@ public class GameManager : MonoBehaviour
         dirLight.transform.eulerAngles = new Vector3(50,-30,0);
         dirLight.GetComponent<Light>().color = new Color32(152,204,255,255);
     }
+
+    void LightAndCameraSetup(int sceneNumber)
+    {
+        switch (sceneNumber)
+        {
+            //testLevel, Level1, Level2, Level3
+            case 3 : case 4 :case 5: case 6:
+            {
+                LightSetup();
+                CameraSetup();
+                break;
+            }
+        }
+    }
+
+    
 }
