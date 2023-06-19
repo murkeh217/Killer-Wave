@@ -209,4 +209,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa4e31162986784eae5de3ccc2e311b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletModel: {fileID: 0}
+  bulletModel: {fileID: 11400000, guid: c572925f794dac2489edde0b1eb819c3, type: 2}
