@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 7b5b3b1fee00e9c4ebfbe199f640a655, type: 3}
       propertyPath: m_Name
-      value: player_ship Variant
+      value: player_ship
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7b5b3b1fee00e9c4ebfbe199f640a655, type: 3}
       propertyPath: m_TagString
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7b5b3b1fee00e9c4ebfbe199f640a655, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7b5b3b1fee00e9c4ebfbe199f640a655, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,6 +70,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 7b5b3b1fee00e9c4ebfbe199f640a655, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7422392323638001143}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 7b5b3b1fee00e9c4ebfbe199f640a655, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4217426005367329792}
   m_SourcePrefab: {fileID: 100100000, guid: 7b5b3b1fee00e9c4ebfbe199f640a655, type: 3}
 --- !u!1 &6550472386262419389 stripped
 GameObject:
@@ -124,3 +127,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4217426005367329792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550472386262419389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a502af127d921946aa3ed68d0aba777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

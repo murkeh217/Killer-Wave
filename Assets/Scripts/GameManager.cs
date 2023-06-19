@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void CameraSetup()
     {
-        GameObject gameCamera = GameObject.FindGameObjectWithTag("Main Camera");
+        GameObject gameCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
         //Camera Transform
         gameCamera.transform.position = new Vector3(0,0,-300);
