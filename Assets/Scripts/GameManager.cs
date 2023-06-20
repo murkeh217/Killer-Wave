@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public static int currentScene = 0;
     public static int gameLevelScene = 3;
+    public static int playerLives = 3;
     
     bool died = false;
     public bool Died
@@ -85,5 +86,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public void LifeLost()
+    {
+        //lose life
+        if (playerLives >= 1)
+        {
+            playerLives--;
+            Debug.Log("Lives left: "+playerLives);
+            GetComponent<ScenesManager>().ResetScene();
+        }
+        else
+        {
+            playerLives = 3;
+            GetComponent<ScenesManager>().GameOver();
+        }
+
+    }
+
 }

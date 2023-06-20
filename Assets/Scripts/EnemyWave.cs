@@ -14,6 +14,7 @@ public class EnemyWave : MonoBehaviour, IActorTemplate
     float verticalAmplitude = 1;
     Vector3 sineVer;
     float time;
+    int score;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class EnemyWave : MonoBehaviour, IActorTemplate
         health = actorModel.health;
         travelSpeed = actorModel.speed;
         hitPower = actorModel.hitPower;
+        score = actorModel.score;
     }
 
     public void Die()
@@ -51,6 +53,7 @@ public class EnemyWave : MonoBehaviour, IActorTemplate
             if (health <= 0)
             {
                 Die();
+                GameManager.Instance.GetComponent<ScoreManager>().SetScore(score);
             }
         }
     }   
