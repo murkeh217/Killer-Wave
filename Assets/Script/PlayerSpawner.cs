@@ -23,7 +23,7 @@ public class PlayerSpawner : MonoBehaviour
 
     void CreatePlayer()
     {
-        //CREATE PLAYER
+        /*//CREATE PLAYER
         actorModel = Object.Instantiate(Resources.Load("Player_Default")) as SOActorModel;
         playerShip = GameObject.Instantiate(actorModel.actor) as GameObject;
         playerShip.GetComponent<Player>().ActorStats(actorModel);
@@ -33,7 +33,7 @@ public class PlayerSpawner : MonoBehaviour
         playerShip.GetComponentInChildren<ParticleSystem>().transform.localScale = new Vector3(25,25,25);
         playerShip.name = "Player";
         playerShip.transform.SetParent(this.transform);
-        playerShip.transform.position = Vector3.zero;
+        playerShip.transform.position = Vector3.zero;*/
         
         //been shopping
         if(GameObject.Find("UpgradedShip"))
@@ -62,5 +62,6 @@ public class PlayerSpawner : MonoBehaviour
         playerShip.transform.SetParent(this.transform);
         playerShip.transform.position = Vector3.zero;
         GameManager.Instance.CameraSetup();
+        
     }
 }
