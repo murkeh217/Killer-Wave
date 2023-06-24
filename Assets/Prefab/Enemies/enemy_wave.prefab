@@ -138,5 +138,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1499cf276f96ca4abe5189b088cd9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalSpeed: 2
-  verticalAmplitude: 1
+  verticalSpeed: 4
+  verticalAmplitude: 7

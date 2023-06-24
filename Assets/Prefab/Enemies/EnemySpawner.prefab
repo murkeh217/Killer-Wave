@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actorModel: {fileID: 11400000, guid: 5554d5c53ab92e94aa916345f2a58d30, type: 2}
-  spawnRate: 2
-  quantity: 4
+  spawnRate: 5
+  quantity: 7

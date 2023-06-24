@@ -11,8 +11,8 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         CreatePlayer(); 
-        GetComponentInChildren<Player>().enabled = true;
-        GameManager.Instance.CameraSetup();
+        //GetComponentInChildren<Player>().enabled = true;
+        //GameManager.Instance.CameraSetup();
     }
 
     // Update is called once per frame
@@ -23,18 +23,6 @@ public class PlayerSpawner : MonoBehaviour
 
     void CreatePlayer()
     {
-        /*//CREATE PLAYER
-        actorModel = Object.Instantiate(Resources.Load("Player_Default")) as SOActorModel;
-        playerShip = GameObject.Instantiate(actorModel.actor) as GameObject;
-        playerShip.GetComponent<Player>().ActorStats(actorModel);
-        //SET PLAYER UP
-        playerShip.transform.rotation = Quaternion.Euler(0,180,0);
-        playerShip.transform.localScale = new Vector3(60,60,60);
-        playerShip.GetComponentInChildren<ParticleSystem>().transform.localScale = new Vector3(25,25,25);
-        playerShip.name = "Player";
-        playerShip.transform.SetParent(this.transform);
-        playerShip.transform.position = Vector3.zero;*/
-        
         //been shopping
         if(GameObject.Find("UpgradedShip"))
         {
@@ -61,6 +49,7 @@ public class PlayerSpawner : MonoBehaviour
         playerShip.name = "Player";
         playerShip.transform.SetParent(this.transform);
         playerShip.transform.position = Vector3.zero;
+        playerShip.GetComponent<PlayerTransition>().enabled = true;
         GameManager.Instance.CameraSetup();
         
     }
