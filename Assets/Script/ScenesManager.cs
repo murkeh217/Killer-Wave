@@ -1,5 +1,6 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScenesManager : MonoBehaviour
 {
@@ -23,7 +24,17 @@ public class ScenesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    {
+        GetComponent<GameManager>().SetLivesDisplay(GameManager.playerLives);
         
+        if (GameObject.Find("score"))
+        {
+            GameObject.Find("score").GetComponent<Text>().text = GetComponent<ScoreManager>().PlayersScore.ToString();
+        }
     }
 
     // Update is called once per frame
