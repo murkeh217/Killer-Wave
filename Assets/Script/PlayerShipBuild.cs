@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
 
-public class PlayerShipBuild : MonoBehaviour, IUnityAdsListener, IUnityAdsInitializationListener
+public class PlayerShipBuild : MonoBehaviour, IUnityAdsListener, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     private GameObject target;
     private GameObject tmpSelection;
@@ -68,7 +68,7 @@ public class PlayerShipBuild : MonoBehaviour, IUnityAdsListener, IUnityAdsInitia
     private void LoadAd()
     {
         //Advertisement.AddListener(this);
-        Advertisement.Load(adId);
+        Advertisement.Load(adId,this);
     }
 
     private void TurnOffSelectionHighlights()
@@ -109,7 +109,7 @@ public class PlayerShipBuild : MonoBehaviour, IUnityAdsListener, IUnityAdsInitia
 
     public void WatchAdvert()
     {
-        Advertisement.Show(adId);
+        Advertisement.Show(adId,this);
     }
 
     public void StartGame()

@@ -2292,7 +2292,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 986875009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 269940200}
+        m_TargetAssemblyTypeName: PlayerShipBuild, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &986875009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4933,6 +4945,10 @@ PrefabInstance:
     - target: {fileID: 2672455737784203494, guid: 32230cc0c7e8a94b8b86ea027d3564cb, type: 3}
       propertyPath: m_Name
       value: ShopManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471121652611907435, guid: 32230cc0c7e8a94b8b86ea027d3564cb, type: 3}
+      propertyPath: m_Alignment
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
