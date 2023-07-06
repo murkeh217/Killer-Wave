@@ -6,7 +6,7 @@ using System.Collections;
 public class ScenesManager : MonoBehaviour
 {
     Scenes scenes;
-    public enum Scenes
+    enum Scenes
     {
         bootUp,
         title,
@@ -67,7 +67,7 @@ public class ScenesManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("ENDSCORE: " + GameManager.Instance.GetComponent<ScoreManager>().PlayersScore);
+        Debug.Log("END SCORE: " + GameManager.Instance.GetComponent<ScoreManager>().PlayersScore);
         SceneManager.LoadScene("gameOver");
     }
 
@@ -175,7 +175,7 @@ public class ScenesManager : MonoBehaviour
 
     void SendInJsonFormat(string lastLevel)
     {
-        if (lastLevel == "level3")
+        if (lastLevel == "level 3")
         {
             GameStats gameStats = new GameStats();
             gameStats.livesLeft = GameManager.playerLives;
@@ -184,7 +184,6 @@ public class ScenesManager : MonoBehaviour
 
             string json = JsonUtility.ToJson(gameStats, true);
             Debug.Log(json);
-            
             Debug.Log(Application.persistentDataPath + "/GameStatsSaved.json");
             System.IO.File.WriteAllText(Application.persistentDataPath + "/GameStatsSaved.json",json);
         }
