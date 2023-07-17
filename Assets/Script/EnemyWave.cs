@@ -38,6 +38,8 @@ public class EnemyWave : MonoBehaviour, IActorTemplate
 
     public void Die()
     {
+        GameObject explode = GameObject.Instantiate(Resources.Load("explode")) as GameObject;
+        explode.transform.position = this.gameObject.transform.position;
         Destroy(this.gameObject);
     }
 

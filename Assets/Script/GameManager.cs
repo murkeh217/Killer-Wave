@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -27,6 +28,11 @@ public class GameManager : MonoBehaviour
 
         currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
         LightAndCameraSetup(currentScene);
+        
+#if UNITY_ANDROID
+        Screen.sleepTimeout = SleepTimeout.
+            NeverSleep;
+#endif
     }
 
     void CheckGameManagerIsInTheScene()
@@ -96,6 +102,14 @@ public class GameManager : MonoBehaviour
 
     public void LifeLost()
     {
+        StartCoroutine(DelayedLifeLost());
+
+    }
+
+    IEnumerator DelayedLifeLost()
+    {
+        yield return new WaitForSeconds(2);
+        
         //lose life
         if (playerLives >= 1)
         {
@@ -108,7 +122,6 @@ public class GameManager : MonoBehaviour
             playerLives = 3;
             GetComponent<ScenesManager>().GameOver();
         }
-
     }
 
     public void SetLivesDisplay(int players)
