@@ -215,13 +215,13 @@ public class Player : MonoBehaviour, IActorTemplate
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 300));
             touchPosition.z = 0;
             direction = (touchPosition - transform.position);
-            rb.velocity = new Vector3(direction.x, direction.y, 0) * 5;
+            rb.linearVelocity = new Vector3(direction.x, direction.y, 0) * 5;
             direction.x += movingScreen;
 
 
             if (touch.phase == TouchPhase.Ended)
             {
-                rb.velocity = Vector3.zero;
+                rb.linearVelocity = Vector3.zero;
             }
         }
     }
